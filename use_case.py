@@ -50,12 +50,14 @@ class ValidateLegacyNetworkUseCase:
         network_id = args.get('network_id')
         serial = args.get('serial')
         name = args.get('name')
-        branch_id = args.get('branch_id')
+        branch_number = args.get('branch_number')
+        company = args.get('company')
         legacy_network = {
             'network_id': network_id,
             'serial': serial,
             'name': name,
-            'branch_id': branch_id
+            'branch_number': branch_number,
+            'company': company
         }
         meraki_network = read_meraki_network(network_id, serial, self.client)
         verdict = make_migration_verdict_for(legacy_network, meraki_network)

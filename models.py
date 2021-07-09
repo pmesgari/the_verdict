@@ -38,7 +38,8 @@ class Verdict:
             'network_id': self.network.get('network_id'),
             'name': self.network.get('name'),
             'serial': self.network.get('serial'),
-            'branch_id': self.network.get('branch_id'),
+            'branch_number': self.network.get('branch_number'),
+            'company': self.network.get('company'),
             'verdict': self.color.value,
             'errors': self.message
         }

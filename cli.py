@@ -50,7 +50,7 @@ def run_cli(args):
         run_csv(client=client, repo=repo, presenter=presenter)
     else:
         # validate data parameters
-        minimum_data_parameters = {'network_id', 'name', 'serial', 'branch_id'}
+        minimum_data_parameters = {'network_id', 'name', 'serial', 'branch_number'}
         if not minimum_data_parameters.issubset(set(data.keys())):
             raise ValueError('Minimum data parameters are missing, see usage')
 
@@ -77,7 +77,7 @@ def arguments():
     parser.add_argument(
         '--data',
         nargs='+',
-        help='legacy network parameters, must include keys network_id, name, serial and branch_id',
+        help='legacy network parameters, must include keys network_id, name, serial and branch_number',
         metavar='key=value'
     )
     parser.add_argument(

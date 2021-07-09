@@ -30,7 +30,7 @@ class CsvPresenter:
         self._formatted_data.append(data.to_json())
 
     def end(self):
-        fieldnames = ['network_id', 'name', 'serial', 'branch_id', 'verdict', 'errors']
+        fieldnames = ['company', 'network_id', 'name', 'serial', 'branch_number', 'verdict', 'errors']
         with open(self._output_path, 'w', newline='\n') as csvfile:
             writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
 
